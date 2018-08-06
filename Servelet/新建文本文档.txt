@@ -1,0 +1,33 @@
+drop database why3;
+
+create database why3;
+
+--普通用户表
+create table users(
+userid  int  primary key auto_increment,
+username varchar(30) not null unique,
+truename varchar(30) not null,
+password varchar(30) not null,
+email varchar(30) not null,
+phone varchar(30) not null,
+address varchar(30) not null,
+postcode varchar(6) not null,
+grade  int default 1
+)
+
+insert into users(username,truename,password,email,phone,address,postcode,grade) values("why","海缘","why1993","why@qq.com","13627524366","北邮","100876",1);
+
+--管理员表admin
+
+
+--货物表
+create table goods(
+goodsid  bigint  primary key auto_increment,
+goodsName varchar(40),
+goodsInfo varchar(500),  -- 介绍
+goodsPrice float,
+publisher varchar(40),  --发行商
+goodsNum  int,     --存货数量
+photo varchar(40),  -- 照片
+type varchar(30)   -- 类型
+)
